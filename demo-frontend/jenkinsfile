@@ -1,1 +1,12 @@
-
+pipeline {
+    agent any
+    
+    stages {
+        stage("Build & making tar file") {
+            steps {
+                sh "cd demo-frontend && npm install && npm run build"
+                sh "cd demo-frontend && tar -cvf npmtar.${img_tag}.tar build"
+            }
+        }
+    }
+}
