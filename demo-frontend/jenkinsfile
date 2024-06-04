@@ -10,7 +10,7 @@ pipeline {
         }
         stage('pushing to nexus reo') {
             steps {
-                sh 'curl -v -u jashu:12345 --upload-file demo-frontend/npmtar.${img_tag}.tar "http://${ip_address}/repository/npm-repo/npmtar.${img_tag}.tar"'
+                sh 'curl -v -u jashu:12345 --upload-file demo-frontend/npmtar.${img_tag}.tar "http://${ip_address}:8081/repository/npm-repo/npmtar.${img_tag}.tar"'
             }
         }
     }
