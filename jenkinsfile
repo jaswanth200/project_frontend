@@ -2,13 +2,6 @@ pipeline {
     agent any
     
     stages {
-
-        stage("cloning microserviceapp directory") {
-            steps {
-                sh "git clone https://github.com/TekspotEdu/microserviceapp.git"
-            }
-        }
-  
         stage("Build & making tar file") {
             steps {
                 sh "cd demo-frontend && npm install && npm run build"
